@@ -1,0 +1,6 @@
+require("youzark.options")
+require("youzark.var")
+require("youzark.plugins")
+require("youzark.cmd")
+require("youzark.autocmd")
+require("youzark.keymaps")
