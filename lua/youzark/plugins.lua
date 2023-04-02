@@ -6,24 +6,29 @@ require('packer').startup(
 	-- nvim development
 	use 'wbthomason/packer.nvim'
 	use 'junegunn/vim-easy-align'
+    use 'rcarriga/nvim-notify'
+
 	-- tab line
 	use {
 		'nvim-lualine/lualine.nvim',
  		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 	}
+
 	use {
 		'lukas-reineke/indent-blankline.nvim'
 	}
+    use 'numToStr/FTerm.nvim'
+	use 'voldikss/vim-floaterm'
+    use 'kevinhwang91/rnvimr'
+    use 'szw/vim-maximizer'
+
 	use 'kyazdani42/nvim-web-devicons'
 	use 'jiangmiao/auto-pairs'
 	use 'farmergreg/vim-lastplace'
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-lua/plenary.nvim'
 	use 'python-rope/ropevim'
-	use 'voldikss/vim-floaterm'
 	use 'morhetz/gruvbox'
-	use 'kevinhwang91/rnvimr'
-	use 'szw/vim-maximizer'
 	use 'uzxmx/vim-widgets'
 	use 'skywind3000/asynctasks.vim'
 	use 'skywind3000/asyncrun.vim'

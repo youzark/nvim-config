@@ -16,7 +16,8 @@ M.takeScreenShot = function (fileName)
     local imgBaseDir = createImgDirIfNotExist(vim.fn.getcwd())
     if imgBaseDir ~= nil then
         local command = "flameshot gui --path " ..imgBaseDir .. "/" ..fileName
-        os.execute(command)
+        -- os.execute(command)
+        vim.fn.system(command)
         return './img/' .. fileName .. ".png"
     end
 end

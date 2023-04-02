@@ -16,7 +16,9 @@ local var = {
 	webdevicons_enable_airline_tabline = 1,
 	webdevicons_enable_airline_statusline = 1,
 	indentLine_noConcealCursor= 1,
-	mapleader = ","
+	mapleader = ",",
+    mkdp_browser = "/usr/bin/firefox", -- markdown preview
+    vimtex_view_method = "zathura",
 	-- indentLine_conceallevel  = &conceallevel,
 	-- indentLine_concealcursor = &concealcursor,
 }

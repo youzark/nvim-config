@@ -62,7 +62,7 @@ if status and cmp_nvim_lspExist then
 		nmap('<leader>ga', vim.lsp.buf.code_action, "code [A]ction")
 		if telescopeExist then
 			nmap('gd', telescopeBuiltin.lsp_definitions, "[G]oto [D]efinition")
-			nmap('gf', telescopeBuiltin.diagnostics, "[G]oto [D]efinition")
+			nmap('gD', telescopeBuiltin.diagnostics, "[G]oto [D]iagnostics")
 			nmap('gr', telescopeBuiltin.lsp_references, "[G]oto [R]eference")
 			nmap('?', telescopeBuiltin.lsp_document_symbols, "Document symble")
 			nmap('gi', telescopeBuiltin.lsp_implementations, "[G]oto [I]mplementation")
@@ -124,13 +124,13 @@ if cmpExist and luasnipExist then
 					end
 				end, { 'i', 's' }),
 		}),
+
 		-- sources of the completion items listed, the order of sources is the
 		-- order in completion results.
 		sources = cmp.config.sources({
 			{ name = 'nvim_lsp' },
 			{ name = 'luasnip' },
-			-- completion source of words appared in the current buffer
-			{ name = 'buffer' },
+			{ name = 'buffer' }, -- completion source of words appared in the current buffer
 			{ name = 'path' }
 		}),
 	})

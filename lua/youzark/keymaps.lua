@@ -71,3 +71,8 @@ vim.api.nvim_set_keymap('n','m','<cmd>MaximizerToggle<cr>',silent_nore)
 -- floaterm
 vim.api.nvim_set_keymap('n','tn','<cmd>FloatermToggle<cr>',silent_nore)
 vim.api.nvim_set_keymap('t','<Esc>','<c-\\><c-n>',silent_nore)
+
+-- telescope
+vim.api.nvim_set_keymap('n','<leader>h','<cmd>lua require("telescope.builtin").help_tags()<cr>',silent_nore)
+vim.api.nvim_set_keymap('n','?','<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending<cr>',silent_nore) -- press <c-/>
+vim.api.nvim_set_keymap('n','gf','<cmd>lua require("telescope.builtin").find_files({hidden=true})<CR>',{})
