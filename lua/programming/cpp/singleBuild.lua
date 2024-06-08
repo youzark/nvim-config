@@ -10,7 +10,7 @@ local local_build_options = {
     "-Wshadow",
     "-Wconversion",
     "-Wpedantic",
-    "-Werror",
+    -- "-Werror",
     "-fsanitize=address",
     "-fno-omit-frame-pointer",
     "-fsanitize=undefined",

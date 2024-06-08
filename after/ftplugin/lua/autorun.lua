@@ -21,12 +21,4 @@ local function runLuaFile()
 	vim.cmd("!./%")
 end
 
-vim.api.nvim_buf_create_user_command(0,"RunLuaFile",function ()
-	setShebangIfNotExist()
-	vim.cmd("w")
-	vim.cmd("silent exec '!chmod +x %'")
-	vim.cmd("!./%")
-end,{})
-
-vim.keymap.set("n","<leader>t",":RunLuaFile<CR>",{buffer=true})
--- vim.api.nvim_buf_set_keymap(0,"n","<leader>t",":RunLuaFile<CR>",{})
+vim.keymap.set("n","<leader>t",runLuaFile,{buffer=true})

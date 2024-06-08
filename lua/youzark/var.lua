@@ -17,10 +17,8 @@ local var = {
 	webdevicons_enable_airline_statusline = 1,
 	indentLine_noConcealCursor= 1,
 	mapleader = ",",
-    mkdp_browser = "/usr/bin/firefox", -- markdown preview
+    mkdp_browser = "/usr/bin/chromium", -- markdown preview
     vimtex_view_method = "zathura",
-	-- indentLine_conceallevel  = &conceallevel,
-	-- indentLine_concealcursor = &concealcursor,
 }
 
 for key, value in pairs(var) do

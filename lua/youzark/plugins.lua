@@ -7,6 +7,15 @@ require('packer').startup(
 	use 'wbthomason/packer.nvim'
 	use 'junegunn/vim-easy-align'
     use 'rcarriga/nvim-notify'
+    use "norcalli/nvim-colorizer.lua"
+
+    use {
+        -- disable = true,
+        "folke/noice.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+        },
+    }
 
 	-- tab line
 	use {
@@ -23,7 +32,14 @@ require('packer').startup(
     use 'szw/vim-maximizer'
 
 	use 'kyazdani42/nvim-web-devicons'
-	use 'jiangmiao/auto-pairs'
+	-- use 'jiangmiao/auto-pairs'
+    use {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+
 	use 'farmergreg/vim-lastplace'
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-lua/plenary.nvim'
@@ -62,12 +78,22 @@ require('packer').startup(
 			'hrsh7th/cmp-cmdline',
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
-			'rafamadriz/friendly-snippets'
+			'rafamadriz/friendly-snippets',
+
+            -- prettify the completion menu
+            'https://github.com/onsails/lspkind.nvim',
 		},
 	}
     -- formmating and diagnostic
     use {
+        "ray-x/lsp_signature.nvim"
+    }
+    use {
         'jose-elias-alvarez/null-ls.nvim',
+    }
+    use {
+        "NMAC427/guess-indent.nvim",
+        config = function() require("guess-indent").setup {} end
     }
 
 	-- project management
@@ -78,20 +104,55 @@ require('packer').startup(
     use 'nvim-treesitter/playground'
 	use 'nvim-telescope/telescope.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use {"preservim/tagbar"}
 
 	-- auto commentor
 	use 'tpope/vim-commentary'
 
 	-- python iteractive
 	use 'jpalardy/vim-slime'
-	use 'hanschen/vim-ipython-cell'
+	-- use 'hanschen/vim-ipython-cell'
 	use 'jupyter-vim/jupyter-vim'
+    -- use 'untitled-ai/jupyter_ascending.vim'
+    -- use "luk400/vim-jukit"
+
 
 	-- debugger
     use 'mfussenegger/nvim-dap'
     use { "rcarriga/nvim-dap-ui",
         requires = {"mfussenegger/nvim-dap"} }
     use 'theHamsta/nvim-dap-virtual-text'
+
+    -- ai
+    -- use {
+    --     "https://github.com/zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({})
+    --     end
+    -- }
+    -- use {
+    --     "zbirenbaum/copilot-cmp",
+    --     after = { "copilot.lua" },
+    --     config = function ()
+    --         require("copilot_cmp").setup({
+    --             suggestion = { enabled = false },
+    --             panel = {enabled = false},
+    --         })
+    --     end
+    -- }
+    -- use({
+    --     "jackMort/ChatGPT.nvim",
+    --     config = function()
+    --         require("chatgpt").setup()
+    --     end,
+    --     requires = {
+    --         "MunifTanjim/nui.nvim",
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-telescope/telescope.nvim"
+    --     }
+    -- })
 
 
 	-- -- documenting tool
@@ -108,6 +169,9 @@ require('packer').startup(
         'lervag/vimtex'
     })
 
+    -- idea document
+    use { "nagy135/capture-nvim" }
+
 
 	-- plantuml [preview]
 	use { 'scrooloose/vim-slumlord' }
@@ -115,8 +179,7 @@ require('packer').startup(
 	-- -- abandoned
 	-- test tool
 	use {
-		'vim-test/vim-test',
-		disable = true,
+		"klen/nvim-test",
 	}
 
 	-- wiki

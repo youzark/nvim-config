@@ -1,35 +1,51 @@
-local options = {
+-- set global options{{{
+local global = {
+	clipboard = "unnamedplus",
+	shortmess = vim.opt.shortmess["_value"] .. "c",
+	runtimepath = vim.opt.runtimepath["_value"] .. ",~/.fzf",
+	updatetime = 50,
 	cmdheight = 2,
-	relativenumber = true,
 	ignorecase = true,
 	incsearch = true,
-	nu = true,
 	hidden = true,
-	swapfile = false,
-	foldenable = false,
 	termguicolors = true,
-	undofile = true,
 	icon = true,
 	compatible = false,
 	hlsearch = false,
-	foldmethod = "indent",
-	foldnestmax =2,
-	signcolumn ="yes",
-	tabstop =4,
-	shiftwidth = 4,
-	scrolloff = 20,
+	scrolloff = 10,
 	background = "dark",
 	encoding = "utf-8",
-	updatetime = 50,
-	runtimepath = vim.opt.runtimepath["_value"] .. ",~/.fzf",
-	shortmess = vim.opt.shortmess["_value"] .. "c",
-	clipboard = "unnamedplus",
-	colorcolumn = "80",
-	expandtab = true,
     autochdir = true,
-}
+	fillchars = { fold = " ", eob = " " },
+}-- }}}
 
+-- set window local options{{{
+local window = {
+	relativenumber = true,
+	nu = true,
+	signcolumn ="yes",
+	colorcolumn = "50",
+	foldlevel = 20,
+	foldmethod ="marker",
+}-- }}}
 
-for key,val in pairs(options) do
+-- set buffer local options{{{
+local buffer = {
+	swapfile = false,
+	undofile = true,
+	tabstop =4,
+	shiftwidth = 4,
+	expandtab = true,
+}-- }}}
+
+-- set options{{{
+for key,val in pairs(global) do
 	vim.opt[key] = val
 end
+for key,val in pairs(buffer) do
+	vim.bo[key] = val
+	vim.o[key] = val
+end
+for key,val in pairs(window) do
+	vim.wo[key] = val
+end-- }}}

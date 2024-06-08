@@ -1,4 +1,4 @@
-local silent = {silent = true}
+-- local silent = {silent = true}
 -- -- spector
 -- -- -- start debug or continue
 -- vim.api.nvim_set_keymap('n','<leader>ct','<Plug>VimspectorContinue',silent)

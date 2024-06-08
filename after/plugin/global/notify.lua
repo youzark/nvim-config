@@ -17,4 +17,10 @@ local config = {
     top_down = true
 }
 notify.setup(config)
-vim.notify = notify
+vim.notify = function (msg, ...)
+    if msg:match("different client offset_encodings") then
+        return
+    end
+    notify(msg,...)
+end
+-- vim.notify = notify

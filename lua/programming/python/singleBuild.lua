@@ -20,6 +20,7 @@ end
 
 M.run = function()
     setShebangIfNotExist()
+    vim.cmd("wall")
     require("FTerm").scratch({cmd = "python3" .. " " .. vim.api.nvim_buf_get_name(0)})
 end
 

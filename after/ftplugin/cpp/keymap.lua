@@ -41,6 +41,3 @@ vim.keymap.set('n','<space>s', function()
     end ,
     {buffer = true}
 )
-
--- Deprecated:
--- vim.keymap.set("n","<leader>t",":wa<cr><cmd>CreateLocalTest<CR><cmd>terminal sh ./test.sh<cr>i")
