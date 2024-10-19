@@ -18,3 +18,8 @@ require('telescope').setup
 }
 
 pcall(require('telescope').load_extension,'fzf')
+local path_util = require('util.telescope_file_navi_util')
+
+vim.api.nvim_create_user_command('TelescopeGitFiles', path_util.custom_find_files, {})
+vim.api.nvim_set_keymap('n', '<leader>ff', ':TelescopeGitFiles<CR>', { noremap = true, silent = true })
+
