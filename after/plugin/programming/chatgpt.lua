@@ -6,7 +6,7 @@ local config = {
     chat_free_cursor = true,
 	agents = {
 		{
-			name = "ChatGPT4Turbo",
+			name = "ChatGPT4o",
 			chat = true,
 			command = false,
 			-- string with model name or table with model name and parameters
